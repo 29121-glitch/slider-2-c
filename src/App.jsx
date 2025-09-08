@@ -3,6 +3,10 @@ import './App.css'
 import Carmy from './assets/macbook.jpg'
 import Cjoa from './assets/tablet samsung.webp'
 import Curs from './assets/tablet xiaomi.webp'
+import Slider1 from './assets/slider 1.jpg'
+import Slider2 from './assets/slider 2.jpg'
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +14,24 @@ function App() {
   return (
     <>
       <main>
-        <header></header>
+        <header>
+        <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>
+        <img src={Slider1} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={Slider2} alt="" />
+      </SwiperSlide>
+      <SwiperSlide><img src={Slider1} alt="" /></SwiperSlide>
+      <SwiperSlide><img src={Slider 2} alt="" /></SwiperSlide>
+      
+    </Swiper>
+        </header>
         <section className="produtos">
 
           {/* Produto 1 */}
@@ -72,7 +93,7 @@ function App() {
           </div>
           <div className="icon">
           <img src="" alt="" id="tiktok" />
-            </div>/div>
+            </div>/div
           <div className="icon">
           <img src="" alt="" id="x" />
           </div>
